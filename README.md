@@ -1,11 +1,11 @@
 Elasticsearch-zabbix
 ====================
 
-Elasticsearch template and script for zabbix 2.0
+Elasticsearch template and script for zabbix 2.4
 
-This project is a fork of Elasticsearch template from zabbix-grab-bag
+This project is a fork of Elasticsearch template and script of serialsito
 
-https://github.com/untergeek/zabbix-grab-bag
+https://github.com/serialsito/Elasticsearch-zabbix
 
 These are made available by me under an Apache 2.0 license.
 
@@ -15,15 +15,14 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 How it works
 =============
 
-- Put ESzabbix.py in /opt/zabbix/externalscripts/ in the zabbix node
+- Put ESzabbix.py in /etc/zabbix/externalscripts/ in the zabbix node
 
-- Put ESzabbix.userparm in the zabbix include parameters dir, in this case "/opt/zabbix/agent_include"
+- Put ESzabbix.userparm in the zabbix include parameters dir, in this case "/etc/zabbix/agent_include"
 
 - Import ESzabbix_templates.xml to zabbix server
 
 Specs
 =====
-
 
 The items here are for monitoring Elasticsearch (presumably for logstash).
 
@@ -62,10 +61,8 @@ In any event, the current list of included items is:
 	- Number of relocating shards
 	- Number of unassigned shards
 	- Total number of records
-* ES Cache (2 Items)
-	- Node Field Cache Size
-	- Node Filter Cache Size
 * ES Node (2 Items)
+	- Node JVM Heap Mem Used
 	- Node Storage Size
 	- Records indexed per second
 * ES Service (1 Item)
