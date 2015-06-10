@@ -42,8 +42,6 @@ if sys.argv[1] == 'cluster':
         nodestats = conn.nodes.stats()
         subtotal = 0
         for nodename in nodestats[u'nodes']:
-            print sys.argv[2]
-            print nodename
             if sys.argv[2] in indexingkeys:
                 indexstats = nodestats[u'nodes'][nodename][u'indices'][u'indexing']
             elif sys.argv[2] in storekeys:
