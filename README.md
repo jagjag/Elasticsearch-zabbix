@@ -1,7 +1,7 @@
 Elasticsearch-zabbix
 ====================
 
-Elasticsearch template and script for zabbix 2.4
+Elasticsearch template and script for zabbix 2.4 and elasticsearch 1.5.2
 
 This project is a fork of Elasticsearch template and script of serialsito
 
@@ -10,7 +10,6 @@ https://github.com/serialsito/Elasticsearch-zabbix
 These are made available by me under an Apache 2.0 license.
 
 http://www.apache.org/licenses/LICENSE-2.0.html
-
 
 How it works
 =============
