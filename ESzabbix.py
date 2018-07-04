@@ -126,7 +126,7 @@ else: # Not clusterwide, check the next arg
 
 
 def realwrite_a_key(conn):
-    import datetime
+    from datetime import datetime
     doc= {
         'text': 'ES monitoring write_a_key',
         'timestamp': datetime.now()
