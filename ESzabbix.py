@@ -46,12 +46,12 @@ cf.read("ESzabbix.conf")
 es_host = cf.get("es" , "es_host") 
 es_port = cf.get("es" , "es_port")
 es_user = cf.get("es" , "es_user")
-es_pass = base64.b64decode(cf.get("es" , "es_pass"))  # base64 decode
-esconnstr = 'http://'+es_user+'/'+es_pass+'@'+es_host+':'+es_port
-
+es_pass = str.strip(base64.b64decode(cf.get("es" , "es_pass")))  # base64 decode
+esconnstr = 'http://'+es_user+':'+es_pass+'@'+es_host+':'+es_port
+#print esconnstr
 # Try to establish a connection to elasticsearch
 try:
-    conn = Elasticsearch(esconnstr , request_timeout=25)
+    conn = Elasticsearch(esconnstr, request_timeout=25)
 except Exception, e:
     zbx_fail()
 
@@ -123,6 +123,24 @@ else: # Not clusterwide, check the next arg
                 returnval = stats[unicode(sys.argv[2])]
             except Exception, e:
                 pass
+
+
+def realwrite_a_key(conn):
+    doc= {
+        'text': 'ES monitoring write_a_key',
+        'timestamp': datetime.now()
+    }
+    rval = 0
+    try:
+        res = conn.index(index="ESzabbixMonitoring", doc_type='write_a_key', id=1, body=doc)
+    except Exception, e:
+        rval=1
+    return rval
+
+
+if sys.argv[1] == 'real':
+    if sys.argv[2] == 'write_a_key':
+        returnval=realwrite_a_key()
 
 # If we somehow did not get a value here, that's a problem.  Send back the standard
 # ZBX_NOTSUPPORTED
