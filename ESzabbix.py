@@ -140,7 +140,7 @@ def realwrite_a_key(conn):
 
 if sys.argv[1] == 'real':
     if sys.argv[2] == 'write_a_key':
-        returnval=realwrite_a_key()
+        returnval=realwrite_a_key(conn)
 
 # If we somehow did not get a value here, that's a problem.  Send back the standard
 # ZBX_NOTSUPPORTED
