@@ -4,7 +4,7 @@
     <date>2012-12-20T05:16:37Z</date>
     <groups>
         <group>
-            <name>Templates</name>
+            <name>Docker组</name>
         </group>
     </groups>
     <templates>
@@ -13,7 +13,7 @@
             <name>Elasticsearch Cluster</name>
             <groups>
                 <group>
-                    <name>Templates</name>
+                    <name>Docker组</name>
                 </group>
             </groups>
             <applications>
@@ -137,9 +137,7 @@
                             <name>ES Cluster</name>
                         </application>
                     </applications>
-                    <valuemap>
-                        <name>ES Cluster State</name>
-                    </valuemap>
+                    <valuemap/>
                 </item>
                 <item>
                     <name>Number of active primary shards</name>
@@ -464,29 +462,34 @@
             <name>Elasticsearch Node</name>
             <groups>
                 <group>
-                    <name>Templates</name>
+                    <name>Docker组</name>
                 </group>
             </groups>
             <applications>
+<!--                
+                <application>
+                    <name>ES Cache</name>
+                </application>
+-->
                 <application>
                     <name>ES Node</name>
                 </application>
             </applications>
             <items>
-                <item>
-                    <name>Node Heap Used Percent</name>
+ <!--                <item>
+                    <name>Node Field Cache Size</name>
                     <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>ESzabbix[{$NODENAME},heap_used_percent]</key>
+                    <key>ESzabbix[{$NODENAME},field_size_in_bytes]</key>
                     <delay>60</delay>
                     <history>30</history>
                     <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units>%</units>
+                    <units>B</units>
                     <delta>0</delta>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -507,7 +510,46 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>ES Node</name>
+                            <name>ES Cache</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Node Filter Cache Size</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>ESzabbix[{$NODENAME},filter_size_in_bytes]</key>
+                    <delay>60</delay>
+                    <history>30</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ES Cache</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -551,6 +593,7 @@
                     </applications>
                     <valuemap/>
                 </item>
+-->
                 <item>
                     <name>Records indexed per second</name>
                     <type>7</type>
@@ -596,12 +639,16 @@
             <templates/>
             <screens/>
         </template>
+
+
+
+
         <template>
             <template>Elasticsearch Service</template>
             <name>Elasticsearch Service</name>
             <groups>
                 <group>
-                    <name>Templates</name>
+                    <name>Docker组</name>
                 </group>
             </groups>
             <applications>
@@ -612,6 +659,8 @@
                     <name>ES Service</name>
                 </application>
             </applications>
+
+
             <items>
                 <item>
                     <name>Elasticsearch Service Status</name>
@@ -626,7 +675,7 @@
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units></units>
+                    <units>B</units>
                     <delta>0</delta>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -696,5 +745,7 @@
             <type>0</type>
             <dependencies/>
         </trigger>
+
+
     </triggers>
 </zabbix_export>

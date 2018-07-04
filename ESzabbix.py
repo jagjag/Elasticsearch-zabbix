@@ -1,10 +1,19 @@
 #!/usr/bin/env python
 
+
+# enhance by Jiang Jiang 
+# based on https://github.com/serialsito/Elasticsearch-zabbix 
+# and  Wilson Luiz Prosdocimo
+
+
 # Rewrite by Wilson Luiz Prosdocimo
 # Based on https://github.com/serialsito/Elasticsearch-zabbix
 
+
 from elasticsearch import *
 import sys
+import ConfigParser
+import base64
 
 # Define the fail message
 def zbx_fail():
@@ -25,15 +34,24 @@ returnval = None
 # __main__
 
 # We need to have two command-line args: 
-# sys.argv[1]: The node name or "cluster"
-# sys.argv[2]: The "key" (status, filter_size_in_bytes, etc)
+# sys.argv[1]: The node name or "cluster" or real
+# sys.argv[2]: The "key" (status, filter_size_in_bytes, etc)  and put_a_key
 
 if len(sys.argv) < 3:
     zbx_fail()
 
+# read config
+cf = configparser.ConfigParser()
+cf.read("ESzabbix.conf")
+es_host = cf.get("es" , "es_host") 
+es_port = cf.get("es" , "es_port")
+es_user = cf.get("es" , "es_user")
+es_pass = base64.b64decode(cf.get("es" , "es_pass"))  # base64 decode
+esconnstr = 'http://'+es_user+'/'+es_pass+'@'+es_host+':'+es_port
+
 # Try to establish a connection to elasticsearch
 try:
-    conn = Elasticsearch(request_timeout=25)
+    conn = Elasticsearch(esconnstr , request_timeout=25)
 except Exception, e:
     zbx_fail()
 
