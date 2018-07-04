@@ -41,7 +41,7 @@ if len(sys.argv) < 3:
     zbx_fail()
 
 # read config
-cf = configparser.ConfigParser()
+cf = ConfigParser.ConfigParser()
 cf.read("ESzabbix.conf")
 es_host = cf.get("es" , "es_host") 
 es_port = cf.get("es" , "es_port")
