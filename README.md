@@ -4,6 +4,7 @@ Elasticsearch-zabbix
 Elasticsearch template and script for zabbix 3.X and elasticsearch 6.x
 
 This project is a fork of Elasticsearch template and script of serialsito
+and  Wprosdocimo/Elasticsearch-zabbix
 
 https://github.com/serialsito/Elasticsearch-zabbix
 
@@ -27,11 +28,13 @@ The items here are for monitoring Elasticsearch (presumably for logstash).
 
 The template xml file actually contains three templates:
 
-1. Elasticsearch Node & Cache (which is for node-level monitoring)
+1. Elasticsearch Node & Cache (which is for node-level monitoring) ---deleted and will add it back
 
 2. Elasticsearch Cluster (cluster state, shard-level monitoring, record count, storage sizes, etc.)
 
 3. Elasticsearch Service (ES service status)
+
+4. Elasticsearch Service (real write test)
 
 The node name is expected as a host-level macro {$NODENAME}
 
