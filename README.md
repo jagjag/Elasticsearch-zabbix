@@ -1,7 +1,7 @@
 Elasticsearch-zabbix
 ====================
 
-Elasticsearch template and script for zabbix 2.4 and elasticsearch 1.5.2
+Elasticsearch template and script for zabbix 3.X and elasticsearch 6.x
 
 This project is a fork of Elasticsearch template and script of serialsito
 
@@ -60,9 +60,11 @@ In any event, the current list of included items is:
 	- Number of relocating shards
 	- Number of unassigned shards
 	- Total number of records
-* ES Node (2 Items)
+* ES Node (2 Items)   ---- deleted
 	- Node JVM Heap Mem Used
 	- Node Storage Size
 	- Records indexed per second
 * ES Service (1 Item)
 	- Elasticsearch service status
+* ES real ( 1 Item )
+    - write_a_key
