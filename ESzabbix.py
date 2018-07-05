@@ -42,7 +42,7 @@ if len(sys.argv) < 3:
 
 # read config
 cf = ConfigParser.ConfigParser()
-cf.read("ESzabbix.conf")
+cf.read(r"/etc/zabbix/scripts/ESzabbix.conf")
 es_host = cf.get("es" , "es_host") 
 es_port = cf.get("es" , "es_port")
 es_user = cf.get("es" , "es_user")
@@ -131,9 +131,11 @@ def realwrite_a_key(conn):
         'text': 'ES monitoring write_a_key',
         'timestamp': datetime.now()
     }
-    rval = 0
+    rval = 0   # default return val 0
+    #rval = 1  # only for zabbix trigger test
+    #print doc
     try:
-        res = conn.index(index="ESzabbixMonitoring", doc_type='write_a_key', id=1, body=doc)
+        res = connt.index(index="eszabbixmonitoring", doc_type='write_a_key', id=1, body=doc)
     except Exception, e:
         rval=1
     return rval
