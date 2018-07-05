@@ -15,7 +15,9 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 How it works
 =============
 
-- Put ESzabbix.py in /etc/zabbix/externalscripts/ in the zabbix node
+- Put ESzabbix.py in /etc/zabbix/scripts/ in the zabbix node
+
+- Put ESzabbix.conf in  /etc/zabbix/scripts/  and update the connection string
 
 - Put ESzabbix.userparm in the zabbix include parameters dir, in this case "/etc/zabbix/agent_include"
 
