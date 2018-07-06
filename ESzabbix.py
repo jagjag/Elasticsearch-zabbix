@@ -129,7 +129,7 @@ def realwrite_a_key(conn):
     from datetime import datetime
     doc= {
         'text': 'ES monitoring write_a_key',
-        'timestamp': datetime.now()
+        'timestamp': datetime.utcnow()
     }
     rval = 0   # default return val 0
     #rval = 1  # only for zabbix trigger test
