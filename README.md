@@ -38,7 +38,7 @@ The template xml file actually contains three templates:
 
 4. Elasticsearch Service (real write test)
 
-The node name is expected as a host-level macro {$NODENAME}
+~~The node name is expected as a host-level macro {$NODENAME}~~
 
 There are triggers assigned for the cluster state:
 
