@@ -128,9 +128,9 @@ elif sys.argv[1] == 'node':
         esnodelist=[]
         try:
             nodestats = conn.nodes.stats()
-            for nodename in nodestats[u'nodes']:
+            for nodename in nodestats[u'nodes'][nodename][u'name']:
                 esnodelist.append({"{#ESNODENAME": nodename.strip()})
-            print json.dumps({'data':esnodelist},sort_keys=True,indent=4)
+            print json.dumps({'data':esnodelist}, sort_keys=True, indent=4)
         except Exception, e:
             pass
 

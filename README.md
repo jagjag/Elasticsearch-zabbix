@@ -65,7 +65,8 @@ In any event, the current list of included items is:
 	- Number of relocating shards
 	- Number of unassigned shards
 	- Total number of records
-* ES Node (2 Items)   ---- deleted
+* ES Node
+    - discovery
 	- Node JVM Heap Mem Used
 	- Node Storage Size
 	- Records indexed per second
