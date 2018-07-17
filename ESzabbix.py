@@ -102,6 +102,39 @@ elif sys.argv[1] == 'service':
         except Exception, e:
             returnval = 0
 
+
+#zabbix dicovery
+# sample:
+#{
+#    "data": [
+#        {
+#            "{#ESNODENAME}": "node1"
+#        },
+#        {
+#            "{#ESNODENAME}": "node2"
+#        },
+#        {
+#            "{#ESNODENAME}": "node3"
+#       },
+#        {
+#            "{#ESNODENAME}": "node4"
+#        }
+#    ]
+#}
+
+elif sys.argv[1] == 'node':
+    if sys.argv[2] == 'discovery':
+        import json
+        esnodelist=[]
+        try:
+            nodestats = conn.nodes.stats()
+            for nodename in nodestats[u'nodes']:
+                esnodelist.append({"{#ESNODENAME": nodename.strip()})
+            print json.dumps({'data':esnodelist},sort_keys=True,indent=4)
+        except Exception, e:
+            pass
+
+
 else: # Not clusterwide, check the next arg
 
     nodestats = conn.nodes.stats()
