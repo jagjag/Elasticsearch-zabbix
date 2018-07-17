@@ -121,21 +121,19 @@ elif sys.argv[1] == 'service':
 #        }
 #    ]
 #}
-
 elif sys.argv[1] == 'node':
     if sys.argv[2] == 'discovery':
         import json
         esnodelist=[]
         try:
             nodestats = conn.nodes.stats()
-            for nodename in nodestats[u'nodes'][nodename][u'name']:
-                esnodelist.append({"{#ESNODENAME": nodename.strip()})
-            print json.dumps({'data':esnodelist}, sort_keys=True, indent=4)
+            for nodename in nodestats[u'nodes']:
+                esnodelist.append({"{#ESNODENAME}": nodestats[u'nodes'][nodename][u'name'].strip()})
+            returnval=json.dumps({'data':esnodelist}, sort_keys=True, indent=4)
         except Exception, e:
             pass
 
-
-else: # Not clusterwide, check the next arg
+else:  # Not clusterwide, check the next arg
 
     nodestats = conn.nodes.stats()
     for nodename in nodestats[u'nodes']:

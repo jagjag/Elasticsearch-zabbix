@@ -21,7 +21,7 @@ How it works
 
 - Put ESzabbix.userparm in the zabbix include parameters dir, in this case "/etc/zabbix/agent_include"
 
-- Import ESzabbix_templates.xml to zabbix server
+- Import ESzabbix_templates.xml to zabbix server ( update group config please )
 
 Specs
 =====
@@ -66,7 +66,7 @@ In any event, the current list of included items is:
 	- Number of unassigned shards
 	- Total number of records
 * ES Node
-    - discovery
+    - Node discovery
 	- Node JVM Heap Mem Used
 	- Node Storage Size
 	- Records indexed per second
@@ -74,3 +74,9 @@ In any event, the current list of included items is:
 	- Elasticsearch service status
 * ES real ( 1 Item )
     - write_a_key
+
+中文
+=====
+zabbix 监控elasticsearch模板和脚本
+我的测试环境是 zabbix 3.2 elasticsearch 6.2.3
+请按照上面步骤安装使用。
