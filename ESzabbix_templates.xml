@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.2</version>
-    <date>2018-07-17T11:12:11Z</date>
+    <date>2018-08-24T02:11:11Z</date>
     <groups>
         <group>
             <name>Docker组</name>
@@ -117,7 +117,7 @@
                 </item>
                 <item>
                     <name>Total number of records</name>
-                    <type>7</type>
+                    <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -160,7 +160,7 @@
                 </item>
                 <item>
                     <name>Cluster-wide records indexed per second</name>
-                    <type>7</type>
+                    <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -203,7 +203,7 @@
                 </item>
                 <item>
                     <name>Number of initializing shards</name>
-                    <type>7</type>
+                    <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -332,7 +332,7 @@
                 </item>
                 <item>
                     <name>Number of relocating shards</name>
-                    <type>7</type>
+                    <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -375,7 +375,7 @@
                 </item>
                 <item>
                     <name>Cluster-wide storage size</name>
-                    <type>7</type>
+                    <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -418,7 +418,7 @@
                 </item>
                 <item>
                     <name>ElasticSearch Cluster Status</name>
-                    <type>7</type>
+                    <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -461,7 +461,7 @@
                 </item>
                 <item>
                     <name>Number of unassigned shards</name>
-                    <type>7</type>
+                    <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -564,6 +564,50 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
+                            <name>heap_used_percent on {#ESNODENAME}</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>ESzabbix[{#ESNODENAME},heap_used_percent]</key>
+                            <delay>30</delay>
+                            <history>90</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>ES Node</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
                             <name>query_time_in_millis on {#ESNODENAME}</name>
                             <type>0</type>
                             <snmp_community/>
@@ -588,6 +632,94 @@
                             <formula>1</formula>
                             <delay_flex/>
                             <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>ES Node</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>query_total on {#ESNODENAME}</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>ESzabbix[{#ESNODENAME},query_total]</key>
+                            <delay>30</delay>
+                            <history>90</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>ES Node</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>query_delay on {#ESNODENAME}</name>
+                            <type>15</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>query_delay</key>
+                            <delay>30</delay>
+                            <history>90</history>
+                            <trends>365</trends>
+                            <status>1</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params>last(&quot;query_total on {#ESNODENAME}&quot;) / last(&quot;query_time_in_millis on {#ESNODENAME}&quot;)</params>
                             <ipmi_sensor/>
                             <data_type>0</data_type>
                             <authtype>0</authtype>
@@ -787,6 +919,38 @@
     </templates>
     <triggers>
         <trigger>
+            <expression>{Elasticsearch Cluster:ESzabbix[cluster,index_total].nodata(5m)}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Cluster-wide records 5m nodata</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>1</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Elasticsearch Cluster:ESzabbix[cluster,status].nodata(5m)}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>ElasticSearch Cluster 5m nodata</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>1</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
             <expression>{Elasticsearch Cluster:ESzabbix[cluster,status].last()}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
@@ -841,10 +1005,10 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Elasticsearch Cluster:ESzabbix[cluster,index_total].avg(60,3)}&lt;{$ES_INDEXED_PER_S}</expression>
+            <expression>{Elasticsearch Cluster:ESzabbix[cluster,index_total].avg(#40)}&lt;{$ES_INDEXED_PER_S}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>trigger_es_indexed_per_second</name>
+            <name>trigger_es_indexed_per_second_last</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>

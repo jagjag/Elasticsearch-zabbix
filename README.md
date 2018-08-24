@@ -19,7 +19,7 @@ How it works
 
 - Put ESzabbix.conf in  /etc/zabbix/scripts/  and update the connection string
 
-- Put ESzabbix.userparm in the zabbix include parameters dir, in this case "/etc/zabbix/agent_include"
+- Put ESzabbix.userparm in the zabbix include parameters dir, in this case "/etc/zabbix/agent_include" or "/etc/zabbix/zabbix_agentd.d" for some case
 
 - Import ESzabbix_templates.xml to zabbix server ( update group config please )
 

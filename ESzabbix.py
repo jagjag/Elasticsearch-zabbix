@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 
-# enhance by Jiang Jiang 
+# enhanced by Jiang Jiang
 # based on https://github.com/serialsito/Elasticsearch-zabbix 
 # and  Wilson Luiz Prosdocimo
 
